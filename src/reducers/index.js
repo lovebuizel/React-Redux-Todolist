@@ -12,6 +12,7 @@ const todoReducer = (state = initState, action) => {
   switch (action.type) {
     case 'CREATE_TODO':
       const id = state.currentId + 1
+      // 第二個參數state其實可以不用寫
       return Object.assign({}, state, {
         todos: [
           ...state.todos,
@@ -24,6 +25,7 @@ const todoReducer = (state = initState, action) => {
       })
 
     case 'REMOVE_TODO':
+      // 第二個參數state其實可以不用寫
       return Object.assign({}, state, {
         todos: state.todos.filter(todo => {
           return todo.id !== action.id
